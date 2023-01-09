@@ -5,55 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-
-    <style>
-        .bgc1 {background-color: #1c2b2d}
-        .bgc2 {background-color: #1f6f8b}
-        .bgc3 {background-color: #99a8b2}
-        .bgc4 {background-color: #e6d5b8}
-
-        .c1 {color: #1c2b2d}
-        .c2 {color: #1f6f8b}
-        .c3 {color: #99a8b2}
-        .c4 {color: #e6d5b8}
-
-        .background {
-            position: fixed;
-            left: 0;
-            right: 0;
-            height: 200px;
-        }
-
-        .card-format p {
-            margin-bottom: 5px;
-        }
-
-        body h1 {
-            font-size: 25px;
-        }
-
-        body h2 {
-            font-size: 20px;
-        }
-
-        .social-networks {
-            font-size: 30px;
-        }
-
-        .button {
-            border: none;
-            text-decoration: none;
-            background-color: #e6d5b8;
-            padding: 10px 30px;
-            border-radius: 8px;
-            color: #1c2b2d;
-            font-weight: bold;
-        }
-
-        .card.card-shadow {
-            box-shadow: 0 0 5px 0 black;
-        }
-    </style>
+    <link rel="stylesheet" href="css/app.css">
+    <title>CV - Luis Guillén</title>
 </head>
 <body class="pb-5">
     <div class="background bgc3"></div>
@@ -68,16 +21,14 @@
                             <div class="col-md-6">
                                 <div class="header">
                                     <h1>Luis Antonio Guillén Galindo</h1>
-                                    <h2>Desarrollador Web</h2>
+                                    <h2>FullStack Developer</h2>
                                 </div>
                                 
                                 <div class="content mt-4">
-                                    <p><span class="fa fa-birthday-cake"></span>&nbsp;<span id="cv-birthday"></span> - <span id="cv-age"></span></p>
+                                    <p><span class="fa fa-birthday-cake"></span>&nbsp;<span id="cv-birthday"></span> | <span id="cv-age"></span> años</p>
                                     <p><span class="fa fa-at"></span> luis.guillen@lungosoft.com</p>
                                     <p><span class="fa fa-map-marker-alt"></span> Comonfort, Guanajuato</p>
                                     <p><span class="fa fa-phone"></span> 412 121 9890</p>
-                                    <p><span class="fa fa-globe-americas"></span> https://lungosoft.com</p>
-                                    <p><span class="fa fa-blog"></span> https://blog.lungosoft.com</p>
                                 </div>
 
                                 <div class="mt-4 social-networks">
@@ -87,8 +38,15 @@
                                     <a class="c4" href="https://github.com/guillen" target="_blank"><span class="fab fa-github-square"></span></a>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-
+                            <div class="col-md-6 text-right d-none d-md-block">
+                                <div class="profile-picture">
+                                    <img src="images/avatar.jpg" width="150" height="150" alt="profile photo">
+                                </div>
+                            </div>
+                            <div class="col-12 text-center d-md-none">
+                                <div class="profile-picture">
+                                    <img src="images/avatar.jpg" width="150" height="150" alt="profile photo">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -102,11 +60,16 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-format border border-info pt-4 pb-4">
+                    <div class="card-header text-center">
+                        <h1>D E S C R I P C I Ó N</h1>
+                    </div>
                     <div class="card-body pl-5 pr-5">
-                        <p>Más de 3 años de experiencia desarrollando aplicaciones web, manejo de personal y administración de proyectos, con capacidades tanto técnicas como de gestión. Entiendo las necesidades del software más allá de su forma técnica, su impacto debe generar reducción de costos, aumento en las ganancias y/o mejora de procesos. Puedo gestionar el proyecto, negociar y dirigir un proyecto, ademas, puedo montar un proyecto de 0 a 100%, desde la negociación, análisis, desarrollo y deploy.</p>
+                        <p>Programador web con <span id="experience-days"></span> años de experiencia desarrollando aplicaciones web, manejo de personal y administración de proyectos, con capacidades tanto técnicas como de gestión. Entiendo las necesidades del software más allá de su forma técnica. Capacidad para gestionar el proyecto, negociar y dirección con las técnologías más avanzadas, ademas, puedo montar un proyecto de 0 a 100%, desde la negociación, análisis, desarrollo y deploy. Me expecializo en aplicaciones web en entornos LAPP (Linux, Apache, postgresql y PHP), pero principalmente en entornos .NET, Angular y SQLServer.</p>
 
                         <div class="content text-center mt-4">
-                            <a href="#" class="button">LLAMAR</a>
+                            <a href="tel:412 121 9890" class="button">LLAMAR</a>
+                            <a href="mailto:luisguillen200592@gmail.com" class="button">CORREO</a>
+                            <a href="https://wa.me/+524121219890" target="_blank" class="button">WHATSAPP</a>
                         </div>
                     </div>
                 </div>
@@ -114,233 +77,117 @@
         </div>
     </div>
 
-    <!--PORTAFOLIO-->
+    <!--KNOWLEDGE-->
     <div class="container pt-5">
-        <div class="row mt-5">
-            <div class="col-md-12 text-center mb-4">
-                <h1>P O R T A F O L I O</h1>
-            </div>
-        </div>
-
         <div class="row">
-            <div class="col-md-6">
-                <div class="card card-shadow">
-                    <div class="card-body">
-                        <h2 class="c1">Aplicación Web - Control Lógistico</h2>
-                        <p>Control de viajes, desde la planeación hasta la generación de costos y calculo de la utilidad. Módulos de ventas, lógistica, compras, mantenimiento, inventarios y más de 30 reportes en vista, pdf y excel. Se realizó la negociación, análisis, diseño, programación y deploy al servidor.</p>
-                        <p>
-                            <strong>Tecnologías: </strong> 
-                            <img src="images/bootstrap.png" width="32" alt="Bootstrap">
-                            <img src="images/angular.png" width="32" alt="Angular 6">
-                            <img src="images/laravel.png" width="32" alt="Laravel">
-                            <img src="images/digitalocean.png" width="32" alt="Digital Ocean">
-                            <img src="images/git.png" width="32" alt="Git">
-                            <img src="images/postgresql.png" width="32" alt="PostgreSQL">
-                        </p>
+            <div class="col-md-12">
+                <div class="card card-format border border-info pt-4 pb-4">
+                    <div class="card-header text-center">
+                        <h1>C O N O C I M I E N T O S</h1>
                     </div>
-                </div>
-                <div class="card mt-5 card-shadow">
-                    <div class="card-body">
-                        <h2 class="c1">Pagina Web - Diseño Web</h2>
-                        <p>Creación de maquetación en base a diseño. Javascript y PHP puro, montado en un servidor del cliente en GoDaddy. Comunicación con su equipo de diseño para la implementación de los cambios.</p>
-                        <p>
-                            <strong>Tecnologías</strong>
-                            <img src="images/html5.png" width="32" alt="HTML5">
-                            <img src="images/css3.png" width="32" alt="CSS3">
-                            <img src="images/php.png" width="32" alt="PHP">
-                            <img src="images/git.png" width="32" alt="Git">
-                            <img src="images/jquery.png" width="32" alt="JQuery">
-                            <img src="images/godaddy.png" width="32" alt="GoDaddy">
-                        </p>
-                    </div>
-                </div>
-                <div class="card mt-5 card-shadow">
-                    <div class="card-body">
-                        <h2 class="c1">Aplicación Web - Reportes SAP</h2>
-                        <p>Reportes en tablas con filtros, busquedas y ordenamiento de las mismas. Gráficas e indicadores. Información consultada en una base de datos en SQL Server de SAP Business One 9, configuración de los servidores (servidor de la aplicación y servidor SAP) para las conexiones y la seguridad de los servidores</p>
-                        <p>
-                            <strong>Tecnologías: </strong> 
-                            <img src="images/bootstrap.png" width="32" alt="Bootstrap">
-                            <img src="images/vue.png" width="32" alt="Vue">
-                            <img src="images/sqlserver.png" width="32" alt="SQL Server">
-                            <img src="images/git.png" width="32" alt="Git">
-                        </p>
-                    </div>
-                </div>
-                <div class="card mt-5 card-shadow">
-                    <div class="card-body">
-                        <h2 class="c1">Aplicación Web - StartUp Onfro</h2>
-                        <p>Plataforma de intermediación entre transportistas y dueños de carga (clientes) para facilitar a las empresas a encontrar fletes. Aplicaicón con mapas, Web Sockets (Real Time). División en un API (Backend) y una SPA (FrontEnd) para la posibilidad de poder exponer el API en un futuro.</p>
-                        <p>
-                            <strong>Tecnologías: </strong> 
-                            <img src="images/bootstrap.png" width="32" alt="Bootstrap">
-                            <img src="images/angular.png" width="32" alt="Angular 6">
-                            <img src="images/laravel.png" width="32" alt="Laravel">
-                            <img src="images/digitalocean.png" width="32" alt="Digital Ocean">
-                            <img src="images/git.png" width="32" alt="Git">
-                            <img src="images/postgresql.png" width="32" alt="PostgreSQL">
-                        </p>
-                    </div>
-                </div>
-                <div class="card mt-5 card-shadow">
-                    <div class="card-body">
-                        <h2 class="c1">Aplicación Web - Sistema Gestión Escolar</h2>
-                        <p>Sistema para jardín de niños, control de datos de papas, alumnos, maestros, grupos y a partir de esto el manejo de la cobranza de inscripciones, mensualidades, material, etc. Aplicación manejada en la nube.</p>
-                        <p>
-                            <strong>Tecnologías: </strong> 
-                            <img src="images/laravel.png" width="32" alt="Laravel">
-                            <img src="images/angularjs.png" width="32" alt="Angular JS">
-                            <img src="images/postgresql.png" width="32" alt="PostgreSQL">
-                            <img src="images/digitalocean.png" width="32" alt="Digital Ocean">
-                            <img src="images/git.png" width="32" alt="Git">
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mt-5 card-shadow">
-                    <div class="card-body">
-                        <h2 class="c1">API Rest - API SAP Business One</h2>
-                        <p>Creación de una REST API usando NET CORE 3 para creación de documentos de ventas, compras e inventarios en SAP Business One, utilizando un desarrollo (Vease más adelante) para la conexión. Los documentos que se crean son: Ordenes de Venta, Ordenes de Compra y Salidas de Almacen.</p>
-                        <p>
-                            <strong>Tecnologías: </strong> 
-                            <img src="images/netcore.png" width="32" alt="NET Core 3">
-                            <img src="images/sap.png" width="32" alt="SAP">
-                            <img src="images/git.png" width="32" alt="Git">
-                        </p>
-                    </div>
-                </div>
-                <div class="card mt-5 card-shadow">
-                    <div class="card-body">
-                        <h2 class="c1">Aplicación Web - Portal SAP</h2>
-                        <p>Plataforma de desarrollos para control de algunos de los procesos de la empresa. Control de comisiones a tiendas departamentales, Carga de salidas de inventario de almacen por conceptos de gastos en producción y control de los gastos en efectivo de las cajas chicas. Conexión a la API Rest SAP Business One.</p>
-                        <p>
-                            <strong>Tecnologías: </strong> 
-                            <img src="images/bootstrap.png" width="32" alt="Bootstrap">
-                            <img src="images/vue.png" width="32" alt="Vue">
-                            <img src="images/sqlserver.png" width="32" alt="SQL Server">
-                            <img src="images/git.png" width="32" alt="Git">
-                        </p>
-                    </div>
-                </div>
-                <div class="card mt-5 card-shadow">
-                    <div class="card-body">
-                        <h2 class="c1">Aplicación Escritorio - Pesaje Productos</h2>
-                        <p>Aplicación de escritorio con conexión a una bascula industrial con la intención de registrar los pesos de compras, ventas, traspasos de inventarios y devoluciones de mercancía, creando los documentos en SAP Business One utilizando WS creados por un tercero.</p>
-                        <p>
-                            <strong>Tecnologías: </strong> 
-                            <img src="images/netframework.png" width="32" alt="NET Framework 4">
-                            <img src="images/git.png" width="32" alt="Git">
-                        </p>
-                    </div>
-                </div>
-                <div class="card mt-5 card-shadow">
-                    <div class="card-body">
-                        <h2 class="c1">Aplicación Web - Sistema Agencia Viajes</h2>
-                        <p>Sistema para gestionar los viajes que realizan y los autobuses que rentan. Gestión de pagos, clientes y proveedores. Control de los camiones en ruta y los que están disponibles en ciertas fechas. Montado en la red local usando un servidor windows.</p>
-                        <p>
-                            <strong>Tecnologías: </strong> 
-                            <img src="images/laravel.png" width="32" alt="Laravel">
-                            <img src="images/angularjs.png" width="32" alt="Angular JS">
-                            <img src="images/postgresql.png" width="32" alt="PostgreSQL">
-                            <img src="images/git.png" width="32" alt="Git">
-                        </p>
-                    </div>
-                </div>
-                <div class="card mt-5 card-shadow">
-                    <div class="card-body">
-                        <h2 class="c1">Otros Proyectos</h2>
-                        <ul>
-                            <li>Diseño de páginas Web (hifos.com.mx, transten.com.mx, lungosoft.com)</li>
-                            <li>Macros en Excel</li>
-                            <li>Creación de cuentas de correo</li>
-                            <li>Asesoría y cambios para Shopify</li>
-                            <li>Modificaciones a sistemas desarrollados por terceros</li>
-                            <li>Capacitación a personal CFE</li>
-                            <li>Consultoría para implementación de software</li>
-                            <li>Modificación de aplicación basada en Indusoft</li>
-                        </ul>
-                        <p>
-                            <strong>Tecnologías</strong>
-                            <img src="images/html5.png" width="32" alt="HTML5">
-                            <img src="images/css3.png" width="32" alt="CSS3">
-                            <img src="images/php.png" width="32" alt="PHP">
-                            <img src="images/git.png" width="32" alt="Git">
-                            <img src="images/jquery.png" width="32" alt="JQuery">
-                            <img src="images/godaddy.png" width="32" alt="GoDaddy">
-                            .....
-                        </p>
+                    <div class="card-body pl-5 pr-5">
+                        <div class="row">
+                            <div class="col-md-4 mb-5">
+                                <h3 class="text-center"><img src="images/netcore.png" width="32" alt="NET Core 3"> .NET Core</h3>
+                                <p>Desarrollo Backend usando el framework .NET Core, especificamente las versiones 3 y 6.</p>
+                            </div>
+                            <div class="col-md-4 mb-5">
+                                <h3 class="text-center"><img src="images/angular.png" width="32" alt="Angular 6"> Angular</h3>
+                                <p>Desarrollo Frontend usando el framework Angular desde su versión 6 en adelante.</p>
+                            </div>
+                            <div class="col-md-4 mb-5">
+                                <h3 class="text-center"><img src="images/sqlserver.png" width="32" alt="SQL Server"> SQL Server</h3>
+                                <p>Parte del desarrollo backend usando SQL Server, creando consultas, vistas, procedimientos almacenados, jobs.</p>
+                            </div>
+                            <div class="col-12 text-center mt-5">
+                                <h3 class="mb-5">Otra Tecnologías</h3>
+                                <div class="row">
+                                    <div class="col-md-3 mb-5">
+                                        <img src="images/bootstrap.png" width="32" alt="Bootstrap">
+                                        <h4>Bootstrap</h4>
+                                        <p>Framework CSS para diseño de páginas web.</p>
+                                    </div>
+                                    <div class="col-md-3 mb-5">
+                                        <img src="images/laravel.png" width="32" alt="Laravel">
+                                        <h4>Laravel Framework</h4>
+                                        <p>Framework PHP MVC, varios años de experiencia, conocimientos fuertes del Framework.</p>
+                                    </div>
+                                    <div class="col-md-3 mb-5">
+                                        <img src="images/git.png" width="32" alt="Git">
+                                        <h4>GIT</h4>
+                                        <p>Gestión de código usando bitbucket y Azure Devops.</p>
+                                    </div>
+                                    <div class="col-md-3 mb-5">
+                                        <img src="images/postgresql.png" width="32" alt="PostgreSQL">
+                                        <h4>PostgreSQL</h4>
+                                        <p>Consultas, configuración y conección con .NET Core y Laravel.</p>
+                                    </div>
+                                    <div class="col-md-3 mb-5">
+                                        <img src="images/php.png" width="32" alt="PHP">
+                                        <h4>PHP</h4>
+                                        <p>Lenguaje de programación, desde su configuración en entornos Linux y su amplio conocimiento nivel Sr.</p>
+                                    </div>
+                                    <div class="col-md-3 mb-5">
+                                        <img src="images/sap.png" width="32" alt="SAP">
+                                        <h4>SAP</h4>
+                                        <p>SAP Business One, uso simple de los módulos y configuraciones. Conocimiento del SDK SAP.</p>
+                                    </div>
+                                    <div class="col-md-3 mb-5">
+                                        <img src="images/sonarqube.png" width="32" alt="SonarQube">
+                                        <h4>SonarQube</h4>
+                                        <p>Análisis de código, configuración con entornos Angular y .NET</p>
+                                    </div>
+                                    <div class="col-md-3 mb-5">
+                                        <img src="images/digitalocean.png" width="32" alt="Digital Ocean">
+                                        <h4>Digital Ocean</h4>
+                                        <p>Configuraciones de entornos de desarrollo basados en PHP y .NET, configuración de servicios y deploy. Comandos Linux.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- HABILIDADES -->
+    <!--EXPERIENCE-->
     <div class="container pt-5">
         <div class="row">
-            <div class="col-md-12 text-center mb-4">
-                <h1>H A B I L I D A D E S</h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card mt-5">
-                    <div class="card-body">
-                        <h2 class="c1 text-center">Tecnologícas</h2>
-                        <p>Experto en:</p>
-                        <ul>
-                            <li>Laravel Framework 5+</li>
-                            <li>Angular 6+</li>
-                            <li>Git</li>
-                            <li>Consultas SQL</li>
-                            <li>Digital Ocean</li>
-                        </ul>
-                        <p>Bases en:</p>
-                        <ul>
-                            <li>Net Core 3</li>
-                            <li>PostgreSQL, SQL Server, MySQL (procedimientos, triggers, etc)</li>
-                            <li>Vue</li>
-                            <li>Shopify</li>
-                        </ul>
+            <div class="col-md-12">
+                <div class="card card-format border border-info pt-4 pb-4">
+                    <div class="card-header text-center">
+                        <h1>E X P E R I E N C I A</h1>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mt-5">
-                    <div class="card-body">
-                        <h2 class="c1 text-center">Administrativas</h2>
-                        <ul>
-                            <li>Gestión de personal</li>
-                            <li>Trabajo en equipo</li>
-                            <li>Capacidad de resolución de problemas complejos</li>
-                            <li>Bases de contabilidad</li>
-                            <li>Bases en procesos de compras, ventas, lógistica, contabilidad, finanzas</li>
-                            <li>Fácilidad de palabra</li>
-                        </ul>
+                    <div class="card-body pl-5 pr-5">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>NEORIS - <small>Angular Developer</small></h4>
+                                <p>Desarrollador Frontend Senior en Angular. Desarrollo, documentación y unit test de los requerimientos de acuerdo a las historias de usuario. Uso de Azure Devops como repositorio GIT e historias de usuario.</p>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>NMH - <small>FullStack Developer</small></h4>
+                                <p>FullStack Developer en .NET, SQL Server y Angular, ocacionalmente en PHP Laravel como backend y PostgreSQL. Gestión del equipo técnico como Technical Leader para organizar actividades, hacer code review y análisis de código con SonarQube, al igual de administrar y configurar servidores (solo servidores de aplicaciones y servicios y actividades relacionado al software) y hacer deploy a los diversos ambientes.</p>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>Alio México - <small>Web Developer</small></h4>
+                                <p>Apoyo para el desarrollo de aplicaciones comerciales para negocios y empresas usando tecnologías como Angular JS y PHP.</p>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>GKN Driveline - <small>Desarrollador Macros Excel</small></h4>
+                                <p>.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-    <script>
-        function main() {
-            var birthday = new Date(1992, 04, 20);
-            var today = new Date();
-            var age = Math.round((today.getTime() - birthday.getTime()) / (1000 * 60 * 60 * 24 * 365));
-
-            var cvAge = $('#cv-age');
-            var cvBirthday = $('#cv-birthday');
-
-            cvAge.text(age + " años");
-            cvBirthday.text(birthday.toLocaleDateString());
-        }
-
-        main();
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="js/dates.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

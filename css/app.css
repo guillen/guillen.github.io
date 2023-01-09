@@ -1,0 +1,54 @@
+.bgc1 {background-color: #1c2b2d}
+.bgc2 {background-color: #1f6f8b}
+.bgc3 {background-color: #99a8b2}
+.bgc4 {background-color: #e6d5b8}
+
+.c1 {color: #1c2b2d}
+.c2 {color: #1f6f8b}
+.c3 {color: #99a8b2}
+.c4 {color: #e6d5b8}
+
+.background {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 200px;
+}
+
+.card-format p {
+    margin-bottom: 5px;
+}
+
+.card-format .card-header {
+    background-color: white;
+}
+
+body h1 {
+    font-size: 25px;
+}
+
+body h2 {
+    font-size: 20px;
+}
+
+.social-networks {
+    font-size: 30px;
+}
+
+.button {
+    border: none;
+    text-decoration: none;
+    background-color: #e6d5b8;
+    padding: 10px 30px;
+    border-radius: 8px;
+    color: #1c2b2d;
+    font-weight: bold;
+}
+
+.card.card-shadow {
+    box-shadow: 0 0 5px 0 black;
+}
+
+.profile-picture img {
+    border-radius: 100%;
+}
