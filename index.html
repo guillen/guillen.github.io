@@ -17,13 +17,6 @@
         .c3 {color: #99a8b2}
         .c4 {color: #e6d5b8}
 
-        .background {
-            position: fixed;
-            left: 0;
-            right: 0;
-            height: 200px;
-        }
-
         .card-format p {
             margin-bottom: 5px;
         }
@@ -63,14 +56,195 @@
             text-decoration-style: solid;
         }
 
-        .card.card-shadow {
-            box-shadow: 0 0 5px 0 black;
+        .profile-picture {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border: 4px solid #e6d5b8;
+        }
+
+        /* ---------- Page ---------- */
+        body {
+            background-color: #f4f6f7;
+            color: #1c2b2d;
+        }
+
+        /* ---------- Sections ---------- */
+        .cv-section {
+            padding-top: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #1c2b2d;
+            margin-bottom: 1.75rem;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 48px;
+            height: 3px;
+            margin-top: 0.6rem;
+            border-radius: 2px;
+            background-color: #1f6f8b;
+        }
+
+        /* ---------- Cards ---------- */
+        .cv-card {
+            background-color: #ffffff;
+            border: 1px solid #e3e8eb;
+            border-radius: 12px;
+            padding: 1.75rem;
+            box-shadow: 0 1px 3px rgba(28, 43, 45, 0.06);
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        article.cv-card:hover {
+            box-shadow: 0 8px 24px rgba(28, 43, 45, 0.10);
+            transform: translateY(-2px);
+        }
+
+        .cv-card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1c2b2d;
+            margin-bottom: 0.35rem;
+        }
+
+        /* ---------- About ---------- */
+        .about-intro {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e3e8eb;
+        }
+
+        .about-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .about-icon {
+            flex: 0 0 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background-color: rgba(31, 111, 139, 0.10);
+            color: #1f6f8b;
+        }
+
+        .about-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .about-item p {
+            color: #5a6b70;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* ---------- Experience ---------- */
+        .job-role {
+            color: #1f6f8b;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .job-dates {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: #5a6b70;
+            background-color: #f4f6f7;
+            border-radius: 999px;
+            padding: 0.25rem 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .job-dates .fa {
+            margin-right: 0.35rem;
+        }
+
+        .job-description {
+            color: #5a6b70;
+            line-height: 1.65;
+            margin-bottom: 0;
+        }
+
+        /* ---------- Skills ---------- */
+        .skills-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #5a6b70;
+            margin: 0.75rem 0 0.75rem;
+        }
+
+        .skill-tags {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tags li {
+            font-size: 0.9rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            border: 1px solid #e3e8eb;
+            background-color: #f4f6f7;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.75rem 0 0;
+        }
+
+        .skill-list li {
+            position: relative;
+            padding: 0.45rem 0 0.45rem 1.5rem;
+            border-bottom: 1px solid #eef1f3;
+            color: #3d4d51;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-list li::before {
+            content: "";
+            position: absolute;
+            left: 0.25rem;
+            top: 1rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #1f6f8b;
+        }
+
+        @media (max-width: 575.98px) {
+            .cv-section { padding-top: 3rem; }
+            .cv-card { padding: 1.25rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cv-card { transition: none; }
+            article.cv-card:hover { transform: none; }
         }
     </style>
 </head>
 <body class="pb-5">
-    <div class="background bgc3"></div>
-
     <!--PRINCIPAL INFORMATION-->
     <div class="container pt-5">
         <div class="row">
@@ -97,8 +271,8 @@
                                     <a class="c4" href="https://github.com/guillen" target="_blank"><span class="fab fa-github-square"></span></a>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-
+                            <div class="col-md-6 order-first order-md-last d-flex align-items-center justify-content-center mb-4 mb-md-0">
+                                <img src="images/profile.jpg" class="profile-picture rounded-circle" alt="Luis Antonio Guillén Galindo">
                             </div>
                         </div>
                     </div>
@@ -108,127 +282,126 @@
     </div>
 
     <!--DESCRIPTION-->
-    <div class="container pt-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card card-format border border-info pt-4 pb-4">
-                    <div class="card-body pl-5 pr-5">
-                        <h1 class="text-center">Sobre mi</h1>
-                        <hr>
-                        <p>Con <span id="cv-experience"></span> años de experiencia, combino inteligencia artificial, desarrollo de software y conocimiento de procesos de negocio.</p>
-                        <p><strong>Inteligencia Artificial.</strong> Uso IA para automatizar el desarrollo de software, procesos administrativos y actividades operativas. No importa el lenguaje o las herramientas, soy muy autodidacta y me acoplo facilmente a nuevas tecnologias</p>
-                        <p><strong>Desarrollo de software.</strong> Construyo aplicaciones web de 0 a 100%, desde el análisis hasta el despliegue a producción. My stack principal es Angular, .NET y SQL Server.</p>
-                        <p><strong>Resolución de problemas.</strong> Entiendo el software más allá de lo técnico: cada solución debe reducir costos, aumentar ganancias o mejorar procesos, siempre evaluando su viabilidad según el contexto, el presupuesto y el tiempo.</p>
-                        <p><strong>Experiencia en SAP BO.</strong> Experiencia desarrollando aplicaciones y modulos bajo el ERP SAP Business ONE</p>
+    <section class="container cv-section">
+        <h2 class="section-title">Sobre mí</h2>
+
+        <div class="cv-card">
+            <p class="about-intro">Con <span id="cv-experience"></span> años de experiencia, combino inteligencia artificial, desarrollo de software y conocimiento de procesos de negocio.</p>
+
+            <div class="row">
+                <div class="col-12 col-md-6 about-item">
+                    <span class="about-icon fa fa-robot"></span>
+                    <div>
+                        <h3 class="about-title">Inteligencia Artificial</h3>
+                        <p>Uso IA para automatizar el desarrollo de software, procesos administrativos y actividades operativas. No importa el lenguaje o las herramientas, soy muy autodidacta y me acoplo facilmente a nuevas tecnologias</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 about-item">
+                    <span class="about-icon fa fa-code"></span>
+                    <div>
+                        <h3 class="about-title">Desarrollo de software</h3>
+                        <p>Construyo aplicaciones web de 0 a 100%, desde el análisis hasta el despliegue a producción. My stack principal es Angular, .NET y SQL Server.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 about-item">
+                    <span class="about-icon fa fa-lightbulb"></span>
+                    <div>
+                        <h3 class="about-title">Resolución de problemas</h3>
+                        <p>Entiendo el software más allá de lo técnico: cada solución debe reducir costos, aumentar ganancias o mejorar procesos, siempre evaluando su viabilidad según el contexto, el presupuesto y el tiempo.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 about-item">
+                    <span class="about-icon fa fa-cubes"></span>
+                    <div>
+                        <h3 class="about-title">Experiencia en SAP BO</h3>
+                        <p>Experiencia desarrollando aplicaciones y modulos bajo el ERP SAP Business ONE</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!--EXPERIENCIA-->
-    <div class="container pt-5">
-        <div class="row mt-5">
-            <div class="col-md-12 text-center mb-4">
-                <h1>Experiencia Laboral</h1>
-            </div>
-        </div>
+    <section class="container cv-section">
+        <h2 class="section-title">Experiencia Laboral</h2>
 
         <div class="row">
-            <div class="col-12 col-lg-6 mb-5">
-                <div class="card card-shadow h-100">
-                    <div class="card-body">
-                        <h2 class="c1">Ria Money Transfer</h2>
-                        <p class="mb-1"><strong>FullStack Developer (.NET, SQL Server y AngularJS)</strong></p>
-                        <p class="text-muted"><span class="fa fa-calendar-alt"></span> Junio 2025 - Actualidad (1 año 6 meses)</p>
-                        <p>Desarrollo de nuevas funcionalidades para una aplicación monolítica en .NET Framework 4.x, AngularJS y SQL Server, trabajando por historias de usuario, revisión de código (Pull Requests) y despliegue a QA. Además participo en el desarrollo de la nueva versión con .NET Core, Angular 17 y SQL Server.</p>
-                    </div>
-                </div>
+            <div class="col-12 col-lg-6 mb-4">
+                <article class="cv-card h-100">
+                    <h3 class="cv-card-title">Ria Money Transfer</h3>
+                    <p class="job-role">FullStack Developer (.NET, SQL Server y AngularJS)</p>
+                    <p class="job-dates"><span class="fa fa-calendar-alt"></span> Junio 2025 - Actualidad (1 año 6 meses)</p>
+                    <p class="job-description">Desarrollo de nuevas funcionalidades para una aplicación monolítica en .NET Framework 4.x, AngularJS y SQL Server, trabajando por historias de usuario, revisión de código (Pull Requests) y despliegue a QA. Además participo en el desarrollo de la nueva versión con .NET Core, Angular 17 y SQL Server.</p>
+                </article>
             </div>
-            <div class="col-12 col-lg-6 mb-5">
-                <div class="card card-shadow h-100">
-                    <div class="card-body">
-                        <h2 class="c1">Neoris</h2>
-                        <p class="mb-1"><strong>FullStack Developer (.NET, SQL y Angular)</strong></p>
-                        <p class="text-muted"><span class="fa fa-calendar-alt"></span> Junio 2022 - Abril 2025 (2 años 11 meses)</p>
-                        <p>Desarrollo de aplicaciones con Angular y .NET Core sobre Oracle y SQL Server en equipos Scrum, para clientes de retail, logística y banca como Telcel, FEMSA, Chubb y CEMEX. Líder técnico en el proyecto de Telcel, migrando una aplicación de Angular 6 a 14. Desarrollo de Azure Functions y SignalR, uso de GitHub Copilot y corrección de vulnerabilidades detectadas con SAST y DAST.</p>
-                    </div>
-                </div>
+            <div class="col-12 col-lg-6 mb-4">
+                <article class="cv-card h-100">
+                    <h3 class="cv-card-title">Neoris</h3>
+                    <p class="job-role">FullStack Developer (.NET, SQL y Angular)</p>
+                    <p class="job-dates"><span class="fa fa-calendar-alt"></span> Junio 2022 - Abril 2025 (2 años 11 meses)</p>
+                    <p class="job-description">Desarrollo de aplicaciones con Angular y .NET Core sobre Oracle y SQL Server en equipos Scrum, para clientes de retail, logística y banca como Telcel, FEMSA, Chubb y CEMEX. Líder técnico en el proyecto de Telcel, migrando una aplicación de Angular 6 a 14. Desarrollo de Azure Functions y SignalR, uso de GitHub Copilot y corrección de vulnerabilidades detectadas con SAST y DAST.</p>
+                </article>
             </div>
-            <div class="col-12 col-lg-6 mb-5">
-                <div class="card card-shadow h-100">
-                    <div class="card-body">
-                        <h2 class="c1">Nutrimentos Minerales de Hidalgo</h2>
-                        <p class="mb-1"><strong>FullStack Developer (.NET, SQL y Angular)</strong></p>
-                        <p class="text-muted"><span class="fa fa-calendar-alt"></span> Agosto 2016 - Junio 2022 (5 años 11 meses)</p>
-                        <p>Inicié como desarrollador de Excel y propuse migrar esos documentos a aplicaciones web. Desarrollé la aplicación de logística con Laravel, PostgreSQL y Angular, incluyendo pruebas unitarias y su despliegue en un servidor Linux en Digital Ocean. También construí una API en .NET Core integrada con SAP Business One mediante su SDK, configurando el servidor Windows y la conexión con SAP.</p>
-                    </div>
-                </div>
+            <div class="col-12 col-lg-6 mb-4">
+                <article class="cv-card h-100">
+                    <h3 class="cv-card-title">Nutrimentos Minerales de Hidalgo</h3>
+                    <p class="job-role">FullStack Developer (.NET, SQL y Angular)</p>
+                    <p class="job-dates"><span class="fa fa-calendar-alt"></span> Agosto 2016 - Junio 2022 (5 años 11 meses)</p>
+                    <p class="job-description">Inicié como desarrollador de Excel y propuse migrar esos documentos a aplicaciones web. Desarrollé la aplicación de logística con Laravel, PostgreSQL y Angular, incluyendo pruebas unitarias y su despliegue en un servidor Linux en Digital Ocean. También construí una API en .NET Core integrada con SAP Business One mediante su SDK, configurando el servidor Windows y la conexión con SAP.</p>
+                </article>
             </div>
-            <div class="col-12 col-lg-6 mb-5">
-                <div class="card card-shadow h-100">
-                    <div class="card-body">
-                        <h2 class="c1">Alio México</h2>
-                        <p class="mb-1"><strong>FullStack Developer (Laravel, PostgreSQL y Angular)</strong></p>
-                        <p class="text-muted"><span class="fa fa-calendar-alt"></span> Agosto 2015 - Agosto 2016 (1 año 1 mes)</p>
-                        <p>Desarrollo full stack con Laravel, Angular y Vue. Mi proyecto principal fue una aplicación móvil, para la cual desarrollé las APIs y la aplicación web. Además preparé e impartí el curso "PHP Avanzado" a personal de CFE.</p>
-                    </div>
-                </div>
+            <div class="col-12 col-lg-6 mb-4">
+                <article class="cv-card h-100">
+                    <h3 class="cv-card-title">Alio México</h3>
+                    <p class="job-role">FullStack Developer (Laravel, PostgreSQL y Angular)</p>
+                    <p class="job-dates"><span class="fa fa-calendar-alt"></span> Agosto 2015 - Agosto 2016 (1 año 1 mes)</p>
+                    <p class="job-description">Desarrollo full stack con Laravel, Angular y Vue. Mi proyecto principal fue una aplicación móvil, para la cual desarrollé las APIs y la aplicación web. Además preparé e impartí el curso "PHP Avanzado" a personal de CFE.</p>
+                </article>
             </div>
-            <div class="col-12 col-lg-6 mb-5">
-                <div class="card card-shadow h-100">
-                    <div class="card-body">
-                        <h2 class="c1">GKN Driveline</h2>
-                        <p class="mb-1"><strong>Excel Developer</strong></p>
-                        <p class="text-muted"><span class="fa fa-calendar-alt"></span> Enero 2015 - Agosto 2015 (8 meses)</p>
-                        <p>Desarrollo en Excel para el área de Manufactura LEAN, enfocada en reducir tiempos del sistema de producción. Mejoré la captura y gestión de la información, generé reportes semanales y mensuales y detecté oportunidades de mejora en el manejo de los datos.</p>
-                    </div>
-                </div>
+            <div class="col-12 col-lg-6 mb-4">
+                <article class="cv-card h-100">
+                    <h3 class="cv-card-title">GKN Driveline</h3>
+                    <p class="job-role">Excel Developer</p>
+                    <p class="job-dates"><span class="fa fa-calendar-alt"></span> Enero 2015 - Agosto 2015 (8 meses)</p>
+                    <p class="job-description">Desarrollo en Excel para el área de Manufactura LEAN, enfocada en reducir tiempos del sistema de producción. Mejoré la captura y gestión de la información, generé reportes semanales y mensuales y detecté oportunidades de mejora en el manejo de los datos.</p>
+                </article>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- HABILIDADES -->
-    <div class="container pt-5">
-        <div class="row">
-            <div class="col-md-12 text-center mb-4">
-                <h1>H A B I L I D A D E S</h1>
-            </div>
-        </div>
+    <section class="container cv-section">
+        <h2 class="section-title">Habilidades</h2>
 
         <div class="row">
-            <div class="col-md-6">
-                <div class="card mt-5">
-                    <div class="card-body">
-                        <h2 class="c1 text-center">Tecnologícas</h2>
-                        <p>Experto en:</p>
-                        <ul>
-                            <li>.NET Framework 4.x.x / .NET 6+</li>
-                            <li>Angular 14+</li>
-                            <li>Git</li>
-                            <li>Consultas SQL</li>
-                            <li>IA con Claude y Copilot</li>
-                        </ul>
-                    </div>
+            <div class="col-12 col-md-6 mb-4">
+                <div class="cv-card h-100">
+                    <h3 class="cv-card-title">Tecnológicas</h3>
+                    <p class="skills-label">Experto en</p>
+                    <ul class="skill-tags">
+                        <li>.NET Framework 4.x.x / .NET 6+</li>
+                        <li>Angular 14+</li>
+                        <li>Git</li>
+                        <li>Consultas SQL</li>
+                        <li>IA con Claude y Copilot</li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card mt-5">
-                    <div class="card-body">
-                        <h2 class="c1 text-center">Administrativas</h2>
-                        <ul>
-                            <li>Gestión de personal</li>
-                            <li>Trabajo en equipo</li>
-                            <li>Capacidad de resolución de problemas complejos</li>
-                            <li>Bases de contabilidad</li>
-                            <li>Bases en procesos de compras, ventas, lógistica, contabilidad, finanzas</li>
-                            <li>Fácilidad de palabra</li>
-                        </ul>
-                    </div>
+            <div class="col-12 col-md-6 mb-4">
+                <div class="cv-card h-100">
+                    <h3 class="cv-card-title">Administrativas</h3>
+                    <ul class="skill-list">
+                        <li>Gestión de personal</li>
+                        <li>Trabajo en equipo</li>
+                        <li>Capacidad de resolución de problemas complejos</li>
+                        <li>Bases de contabilidad</li>
+                        <li>Bases en procesos de compras, ventas, lógistica, contabilidad, finanzas</li>
+                        <li>Fácilidad de palabra</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
