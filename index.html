@@ -50,6 +50,19 @@
             font-weight: bold;
         }
 
+        .contact-link {
+            color: #e6d5b8;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-underline-offset: 3px;
+        }
+
+        .contact-link:hover,
+        .contact-link:focus {
+            color: #ffffff;
+            text-decoration-style: solid;
+        }
+
         .card.card-shadow {
             box-shadow: 0 0 5px 0 black;
         }
@@ -73,10 +86,10 @@
                                 
                                 <div class="content mt-4">
                                     <p><span class="fa fa-birthday-cake"></span>&nbsp;<span id="cv-birthday"></span> - <span id="cv-age"></span></p>
-                                    <p><span class="fa fa-at"></span> luis.guillen@lungosoft.com</p>
+                                    <p><span class="fa fa-at"></span> <a class="contact-link" href="mailto:luisguillen200592@icloud.com">luisguillen200592@icloud.com</a></p>
                                     <p><span class="fa fa-map-marker-alt"></span> Comonfort, Guanajuato</p>
-                                    <p><span class="fa fa-phone"></span> 412 121 9890</p>
-                                    <p><span class="fa fa-globe-americas"></span> https://lungosoft.com</p>
+                                    <p><span class="fa fa-phone"></span> <a class="contact-link" href="tel:+524121219890">412 121 9890</a></p>
+                                    <p><span class="fa fa-globe-americas"></span> <a class="contact-link" href="https://www.linkedin.com/in/luisguillengal/" target="_blank" rel="noopener noreferrer">My Linkedin</a></p>
                                     <p><span class="fa fa-blog"></span> https://blog.lungosoft.com</p>
                                 </div>
 
@@ -103,11 +116,12 @@
             <div class="col-md-12">
                 <div class="card card-format border border-info pt-4 pb-4">
                     <div class="card-body pl-5 pr-5">
-                        <p>Más de 3 años de experiencia desarrollando aplicaciones web, manejo de personal y administración de proyectos, con capacidades tanto técnicas como de gestión. Entiendo las necesidades del software más allá de su forma técnica, su impacto debe generar reducción de costos, aumento en las ganancias y/o mejora de procesos. Puedo gestionar el proyecto, negociar y dirigir un proyecto, ademas, puedo montar un proyecto de 0 a 100%, desde la negociación, análisis, desarrollo y deploy.</p>
-
-                        <div class="content text-center mt-4">
-                            <a href="#" class="button">LLAMAR</a>
-                        </div>
+                        <h1 class="text-center">Sobre mi</h1>
+                        <hr>
+                        <p>Con <span id="cv-experience"></span> años de experiencia, combino inteligencia artificial, desarrollo de software y conocimiento de procesos de negocio.</p>
+                        <p><strong>Inteligencia Artificial.</strong> Uso IA para automatizar el desarrollo de software, procesos administrativos y actividades operativas. No importa el lenguaje o las herramientas, soy muy autodidacta y me acoplo facilmente a nuevas tecnologias</p>
+                        <p><strong>Desarrollo de software.</strong> Construyo aplicaciones web de 0 a 100%, desde el análisis hasta el despliegue a producción. My stack principal es Angular, .NET y SQL Server.</p>
+                        <p><strong>Resolución de problemas.</strong> Entiendo el software más allá de lo técnico: cada solución debe reducir costos, aumentar ganancias o mejorar procesos, siempre evaluando su viabilidad según el contexto, el presupuesto y el tiempo.</p>
                     </div>
                 </div>
             </div>
@@ -118,7 +132,7 @@
     <div class="container pt-5">
         <div class="row mt-5">
             <div class="col-md-12 text-center mb-4">
-                <h1>P O R T A F O L I O</h1>
+                <h1>PORTAFOLIO</h1>
             </div>
         </div>
 
@@ -328,16 +342,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
     <script>
-        function main() {
-            var birthday = new Date(1992, 04, 20);
+        // Returns the number of full years elapsed since the given date.
+        function yearsSince(date) {
             var today = new Date();
-            var age = Math.round((today.getTime() - birthday.getTime()) / (1000 * 60 * 60 * 24 * 365));
+            var years = today.getFullYear() - date.getFullYear();
+            var anniversaryPassed = today.getMonth() > date.getMonth() ||
+                (today.getMonth() === date.getMonth() && today.getDate() >= date.getDate());
+            if (!anniversaryPassed) {
+                years--;
+            }
+            return years;
+        }
+
+        function main() {
+            var birthday = new Date(1992, 4, 20);
+            var careerStart = new Date(2016, 0, 1);
 
             var cvAge = $('#cv-age');
             var cvBirthday = $('#cv-birthday');
 
-            cvAge.text(age + " años");
-            cvBirthday.text(birthday.toLocaleDateString());
+            $('#cv-experience').text(yearsSince(careerStart));
+            cvAge.text(yearsSince(birthday) + " años");
+            var day = String(birthday.getDate()).padStart(2, '0');
+            var month = String(birthday.getMonth() + 1).padStart(2, '0');
+            cvBirthday.text(day + '/' + month + '/' + birthday.getFullYear());
         }
 
         main();
