@@ -242,6 +242,131 @@
             .cv-card { transition: none; }
             article.cv-card:hover { transform: none; }
         }
+
+        /* ---------- Print / PDF ---------- */
+        .print-only {
+            display: none;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 12mm;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background-color: #ffffff;
+                padding-bottom: 0 !important;
+            }
+
+            .container.pt-5 {
+                padding-top: 0 !important;
+            }
+
+            .print-only {
+                display: block;
+            }
+
+            .cv-section {
+                padding-top: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            .cv-card {
+                padding: 1.25rem;
+                box-shadow: none !important;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            article.cv-card:hover {
+                transform: none;
+            }
+
+            .contact-link {
+                text-decoration: none !important;
+            }
+
+            html {
+                font-size: 14px;
+            }
+
+            /* Header: text left, photo right (same as desktop) */
+            .bgc1 .col-md-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .bgc1 .order-md-last {
+                order: 13;
+                margin-bottom: 0 !important;
+            }
+
+            .bgc1 .card-body {
+                padding: 1.5rem 2.5rem !important;
+            }
+
+            .profile-picture {
+                width: 170px;
+                height: 170px;
+            }
+
+            .social-networks {
+                display: none;
+            }
+
+            /* Two columns where the desktop layout has them */
+            .about-item.col-md-6,
+            .cv-section .col-md-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .about-intro {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+                padding-bottom: 1rem;
+            }
+
+            /* Experience starts on a new page, compact cards */
+            .cv-section.page-break {
+                break-before: page;
+                page-break-before: always;
+                padding-top: 0;
+            }
+
+            .cv-section .col-lg-6.mb-4 {
+                margin-bottom: 0.75rem !important;
+            }
+
+            .cv-section .cv-card.h-100 {
+                padding: 0.9rem 1.1rem;
+            }
+
+            .job-role {
+                margin-bottom: 0.4rem;
+            }
+
+            .job-dates {
+                margin-bottom: 0.5rem;
+            }
+
+            .job-description {
+                font-size: 0.92rem;
+                line-height: 1.5;
+            }
+        }
     </style>
 </head>
 <body class="pb-5">
@@ -263,6 +388,8 @@
                                     <p><span class="fa fa-at"></span> <a class="contact-link" href="mailto:luisguillen200592@icloud.com">luisguillen200592@icloud.com</a></p>
                                     <p><span class="fa fa-map-marker-alt"></span> Comonfort, Guanajuato</p>
                                     <p><span class="fa fa-phone"></span> <a class="contact-link" href="tel:+524121219890">412 121 9890</a></p>
+                                    <p class="print-only"><span class="fab fa-linkedin"></span> <a class="contact-link" href="https://www.linkedin.com/in/luisguillengal/">linkedin.com/in/luisguillengal</a></p>
+                                    <p class="print-only"><span class="fab fa-github"></span> <a class="contact-link" href="https://github.com/guillen">github.com/guillen</a></p>
                                 </div>
 
                                 <div class="mt-4 social-networks">
