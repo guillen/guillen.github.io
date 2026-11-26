@@ -39,10 +39,44 @@ function saveLanguage(lng) {
     } catch (e) {}
 }
 
+// Parses a "yyyy-mm" string into { year, month } (month is 1-12).
+function parseYearMonth(value) {
+    var parts = value.split('-');
+    return { year: Number(parts[0]), month: Number(parts[1]) };
+}
+
+// Fills every .job-dates element from its data-start / data-end ("yyyy-mm") attributes,
+// e.g. "Junio 2022 - Abril 2025 (2 años 11 meses)". A missing data-end means a current job.
+// Durations count both the start and end months, so Jan-Aug is 8 months.
+function renderJobDates() {
+    var monthNames = i18next.t('dates.monthNames', { returnObjects: true });
+    var today = new Date();
+
+    $('.job-dates').each(function () {
+        var start = parseYearMonth($(this).attr('data-start'));
+        var endAttr = $(this).attr('data-end');
+        var end = endAttr ? parseYearMonth(endAttr) : { year: today.getFullYear(), month: today.getMonth() + 1 };
+
+        var totalMonths = (end.year - start.year) * 12 + (end.month - start.month) + 1;
+        var years = Math.floor(totalMonths / 12);
+        var months = totalMonths % 12;
+
+        var duration = [];
+        if (years > 0) duration.push(i18next.t('dates.year', { count: years }));
+        if (months > 0) duration.push(i18next.t('dates.month', { count: months }));
+
+        var startText = monthNames[start.month - 1] + ' ' + start.year;
+        var endText = endAttr ? monthNames[end.month - 1] + ' ' + end.year : i18next.t('dates.present');
+
+        $(this).find('.job-dates-text').text(startText + ' - ' + endText + ' (' + duration.join(' ') + ')');
+    });
+}
+
 // Re-translates every [data-i18n] element and syncs the page with the current language.
 function applyLanguage(lng) {
     $('html').attr('lang', lng);
     $('body').localize();
+    renderJobDates();
 
     // Highlight the active toggle button.
     $('.lang-option').each(function () {
