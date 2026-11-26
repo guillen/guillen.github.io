@@ -9,6 +9,10 @@ var translations = {
                 // Plural forms: i18next picks _one / _other based on {{count}}.
                 age_one: '{{count}} año',
                 age_other: '{{count}} años'
+            },
+            about: {
+                intro_one: 'Con {{count}} año de experiencia, combino inteligencia artificial, desarrollo de software y conocimiento de procesos de negocio.',
+                intro_other: 'Con {{count}} años de experiencia, combino inteligencia artificial, desarrollo de software y conocimiento de procesos de negocio.'
             }
         }
     },
@@ -18,6 +22,10 @@ var translations = {
                 role: 'Web Developer',
                 age_one: '{{count}} year old',
                 age_other: '{{count}} years old'
+            },
+            about: {
+                intro_one: 'With {{count}} year of experience, I combine artificial intelligence, software development and business process knowledge.',
+                intro_other: 'With {{count}} years of experience, I combine artificial intelligence, software development and business process knowledge.'
             }
         }
     }

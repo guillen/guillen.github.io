@@ -65,11 +65,10 @@ $(function () {
     var careerStart = new Date(2016, 0, 1);
 
     $('#cv-birthday').text(formatDate(birthday));
-    $('#cv-experience').text(yearsSince(careerStart));
-
-    // The age text is translated by i18next; the number is passed as {{count}}
+    // Texts with numbers are translated by i18next; the number is passed as {{count}}
     // through data-i18n-options, so i18next picks the singular/plural key.
     $('#cv-age').attr('data-i18n-options', JSON.stringify({ count: yearsSince(birthday) }));
+    $('#cv-experience').attr('data-i18n-options', JSON.stringify({ count: yearsSince(careerStart) }));
 
     // Initialize i18next with the translations defined in js/translations.js.
     i18next.init({
