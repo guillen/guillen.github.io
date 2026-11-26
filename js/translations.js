@@ -11,8 +11,10 @@ var translations = {
                 age_other: '{{count}} años'
             },
             about: {
+                title: 'Sobre mí',
                 intro_one: 'Con {{count}} año de experiencia, combino inteligencia artificial, desarrollo de software y conocimiento de procesos de negocio.',
-                intro_other: 'Con {{count}} años de experiencia, combino inteligencia artificial, desarrollo de software y conocimiento de procesos de negocio.'
+                intro_other: 'Con {{count}} años de experiencia, combino inteligencia artificial, desarrollo de software y conocimiento de procesos de negocio.',
+                ai: 'Inteligencia Artificial'
             }
         }
     },
@@ -24,8 +26,10 @@ var translations = {
                 age_other: '{{count}} years old'
             },
             about: {
+                title: 'About me',
                 intro_one: 'With {{count}} year of experience, I combine artificial intelligence, software development and business process knowledge.',
-                intro_other: 'With {{count}} years of experience, I combine artificial intelligence, software development and business process knowledge.'
+                intro_other: 'With {{count}} years of experience, I combine artificial intelligence, software development and business process knowledge.',
+                ai: 'Artificial Intelligence'
             }
         }
     }
