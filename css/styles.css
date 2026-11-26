@@ -239,7 +239,49 @@ article.cv-card:hover {
     display: none;
 }
 
+/* Language toggle (ES | EN) */
+.lang-toggle {
+    display: inline-flex;
+    border: 1px solid #e6d5b8;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.lang-option {
+    border: none;
+    background-color: transparent;
+    color: #e6d5b8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 4px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-option + .lang-option {
+    border-left: 1px solid #e6d5b8;
+}
+
+.lang-option:hover {
+    background-color: rgba(230, 213, 184, 0.15);
+}
+
+.lang-option:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: -2px;
+}
+
+.lang-option.active {
+    background-color: #e6d5b8;
+    color: #1c2b2d;
+}
+
 @media print {
+    .no-print {
+        display: none !important;
+    }
+
     @page {
         size: A4;
         margin: 12mm;

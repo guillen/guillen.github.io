@@ -17,12 +17,45 @@ function formatDate(date) {
     return day + '/' + month + '/' + date.getFullYear();
 }
 
-// Switches the page language and re-translates every [data-i18n] element.
-// Usage (e.g. from the browser console for now): setLanguage('en')
+var LANGUAGES = ['es', 'en'];
+var DEFAULT_LANGUAGE = 'es';
+var LANGUAGE_STORAGE_KEY = 'cv-language';
+
+// Returns the language saved from a previous visit, or the default one.
+// localStorage can throw (private mode, blocked storage), so it is guarded.
+function getSavedLanguage() {
+    try {
+        var saved = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+        if (LANGUAGES.indexOf(saved) !== -1) {
+            return saved;
+        }
+    } catch (e) {}
+    return DEFAULT_LANGUAGE;
+}
+
+function saveLanguage(lng) {
+    try {
+        localStorage.setItem(LANGUAGE_STORAGE_KEY, lng);
+    } catch (e) {}
+}
+
+// Re-translates every [data-i18n] element and syncs the page with the current language.
+function applyLanguage(lng) {
+    $('html').attr('lang', lng);
+    $('body').localize();
+
+    // Highlight the active toggle button.
+    $('.lang-option').each(function () {
+        var isActive = $(this).data('lng') === lng;
+        $(this).toggleClass('active', isActive).attr('aria-pressed', isActive);
+    });
+}
+
+// Switches the page language (called by the toggle buttons).
 function setLanguage(lng) {
     i18next.changeLanguage(lng, function () {
-        $('html').attr('lang', lng);
-        $('body').localize();
+        saveLanguage(lng);
+        applyLanguage(lng);
     });
 }
 
@@ -30,13 +63,18 @@ function setLanguage(lng) {
 $(function () {
     // Initialize i18next with the translations defined in js/translations.js.
     i18next.init({
-        lng: 'es',            // default language
-        fallbackLng: 'es',    // used when a key is missing in the current language
+        lng: getSavedLanguage(),
+        fallbackLng: DEFAULT_LANGUAGE,  // used when a key is missing in the current language
         resources: translations
     }, function () {
         // Register the jQuery plugin: adds $(selector).localize()
         jqueryI18next.init(i18next, $);
-        $('body').localize();
+        applyLanguage(i18next.language);
+    });
+
+    // Language toggle buttons.
+    $('.lang-option').on('click', function () {
+        setLanguage($(this).data('lng'));
     });
 
     var birthday = new Date(1992, 4, 20);
