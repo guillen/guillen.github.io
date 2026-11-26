@@ -61,6 +61,16 @@ function setLanguage(lng) {
 
 // Runs once the DOM is ready.
 $(function () {
+    var birthday = new Date(1992, 4, 20);
+    var careerStart = new Date(2016, 0, 1);
+
+    $('#cv-birthday').text(formatDate(birthday));
+    $('#cv-experience').text(yearsSince(careerStart));
+
+    // The age text is translated by i18next; the number is passed as {{count}}
+    // through data-i18n-options, so i18next picks the singular/plural key.
+    $('#cv-age').attr('data-i18n-options', JSON.stringify({ count: yearsSince(birthday) }));
+
     // Initialize i18next with the translations defined in js/translations.js.
     i18next.init({
         lng: getSavedLanguage(),
@@ -68,7 +78,8 @@ $(function () {
         resources: translations
     }, function () {
         // Register the jQuery plugin: adds $(selector).localize()
-        jqueryI18next.init(i18next, $);
+        // useOptionsAttr: read interpolation values from data-i18n-options.
+        jqueryI18next.init(i18next, $, { useOptionsAttr: true });
         applyLanguage(i18next.language);
     });
 
@@ -76,11 +87,4 @@ $(function () {
     $('.lang-option').on('click', function () {
         setLanguage($(this).data('lng'));
     });
-
-    var birthday = new Date(1992, 4, 20);
-    var careerStart = new Date(2016, 0, 1);
-
-    $('#cv-birthday').text(formatDate(birthday));
-    $('#cv-age').text(yearsSince(birthday) + ' años');
-    $('#cv-experience').text(yearsSince(careerStart));
 });
